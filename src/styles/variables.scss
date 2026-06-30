@@ -1,0 +1,84 @@
+$primary: #1890FF;
+$primary-hover: #40A9FF;
+$primary-active: #096DD9;
+$primary-disabled: #B7E1FF;
+$primary-light: #E6F4FF;
+$deep-blue: #0F2A4A;
+$neutral-blue: #5B6B82;
+$bg-gray: #F5F7FA;
+$card-white: #FFFFFF;
+$success: #52C41A;
+$warning: #FAAD14;
+$danger: #FF4D4F;
+$risk-red: #E63946;
+$risk-orange: #F77F00;
+$risk-yellow: #FCBF49;
+$risk-blue: #2A9D8F;
+$text-primary: #1F2937;
+$text-regular: #374151;
+$text-secondary: #6B7280;
+$border-base: #E5E7EB;
+$border-light: #F0F2F5;
+$font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+$font-num: 'DIN Pro', 'DIN', 'Arial', monospace;
+
+:root {
+  --el-color-primary: #{$primary};
+  --el-color-primary-hover: #{$primary-hover};
+  --el-color-primary-active: #{$primary-active};
+  --el-color-primary-disabled: #{$primary-disabled};
+  --el-color-primary-light-3: #{$primary-light};
+  --el-color-success: #{$success};
+  --el-color-warning: #{$warning};
+  --el-color-danger: #{$danger};
+  --el-bg-color: #{$bg-gray};
+  --el-fill-color-blank: #{$bg-gray};
+  --el-border-color-base: #{$border-base};
+  --el-text-color-primary: #{$text-primary};
+  --el-text-color-regular: #{$text-regular};
+  --el-text-color-secondary: #{$text-secondary};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-gray;
+  color: $text-primary;
+  margin: 0;
+  padding: 0;
+}
+
+.el-button--primary {
+  background-color: $primary !important;
+  border-color: $primary !important;
+  &:hover, &:focus {
+    background-color: $primary-hover !important;
+    border-color: $primary-hover !important;
+  }
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+.el-card {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+.el-table {
+  --el-table-border-color: #{$border-light};
+  --el-table-header-bg-color: #{$bg-gray};
+  th.el-table__cell {
+    font-weight: 600;
+    color: $text-primary;
+  }
+}
+
+.risk-red { background-color: $risk-red; color: white; }
+.risk-orange { background-color: $risk-orange; color: white; }
+.risk-yellow { background-color: $risk-yellow; color: $text-primary; }
+.risk-blue { background-color: $risk-blue; color: white; }
