@@ -90,11 +90,11 @@ import { useRouter, useRoute } from 'vue-router'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import {
   Fold, Expand, Odometer, Warning, WarnTriangleFilled, Ticket,
-  Reading, Tools, Bell, Document, TrendCharts, User, Flask,
+  Reading, Tools, Bell, Document, TrendCharts, User, Coffee,
   FirstAidKit, Setting, DataLine, Guide, DataAnalysis, Box,
   Crop, Aim, MagicStick, Menu, Collection, Key, OfficeBuilding,
   Notebook, Medal, Edit, CollectionTag, Sunny, Sunset, Tickets,
-  DocumentChecked, Shield
+  DocumentChecked, Lock
 } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores/user'
 import { useAppStore } from '@/stores/app'
@@ -116,11 +116,11 @@ const menuTree = ref<MenuItem[]>([])
 // Element Plus 图标映射
 const iconMap: Record<string, any> = {
   Odometer, Warning, WarnTriangleFilled, Ticket, Reading, Tools,
-  Bell, Document, TrendCharts, User, Flask, FirstAidKit, Setting,
+  Bell, Document, TrendCharts, User, Coffee, FirstAidKit, Setting,
   Fold, Expand, DataLine, Guide, DataAnalysis, Box, Crop, Aim,
   MagicStick, Menu, Collection, Key, OfficeBuilding, Notebook,
   Medal, Edit, CollectionTag, Sunny, Sunset, Tickets, DocumentChecked,
-  Shield
+  Lock
 }
 
 function getIcon(name?: string) {

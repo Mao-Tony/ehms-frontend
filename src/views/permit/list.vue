@@ -80,7 +80,7 @@
 
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
-import { ElMessage } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 import { permitApi, type WorkPermit, type PermitQuery } from '@/api/modules/permit'
 
 const loading = ref(false)

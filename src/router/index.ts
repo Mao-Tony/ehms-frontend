@@ -12,6 +12,7 @@ export const constantRoutes: RouteRecordRaw[] = [
 
 export const layoutRoute: RouteRecordRaw = {
   path: '/',
+  name: 'Layout',
   component: () => import('@/views/layout/index.vue'),
   redirect: '/dashboard',
   children: [
@@ -26,10 +27,35 @@ export const layoutRoute: RouteRecordRaw = {
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: constantRoutes
+  routes: [
+    ...constantRoutes,
+    layoutRoute,
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/login'
+    }
+  ]
 })
 
 export const whiteList = ['/login', '/auth/lark/callback']
+
+// 路由守卫：未登录跳 login，已登录访问 login 跳首页
+router.beforeEach((to, _from, next) => {
+  const token = localStorage.getItem('ehms_token')
+  if (whiteList.includes(to.path)) {
+    if (to.path === '/login' && token) {
+      next('/dashboard')
+    } else {
+      next()
+    }
+    return
+  }
+  if (!token) {
+    next('/login')
+    return
+  }
+  next()
+})
 
 export function generateRoutes(menus: MenuItem[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
